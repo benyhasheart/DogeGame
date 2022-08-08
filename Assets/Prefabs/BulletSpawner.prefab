@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: da7b56ccf6a931447b1588a66b3a17b3, type: 2}
+  - {fileID: 2100000, guid: e065bccd02e89f5429789f8ef7892e1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,5 +113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3097312676217205634, guid: af67705ed6ee0df499c6446be1e22e00,
     type: 3}
+  SpawnedBulletCounts: 0
   spawnRateMin: 0.1
   spawnRateMax: 3
