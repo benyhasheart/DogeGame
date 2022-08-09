@@ -7,25 +7,20 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRigidbody = GetComponent<Rigidbody>();
-
+       
         gameManager = FindObjectOfType<GameManager>();
 
-        //Physics.gravity = new Vector3(0, -200.0f, 0);
+        verticalAxis = 0.0f;
+        horizentalAxis = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float inputZ = Input.GetAxis("Vertical");
-        float inputX = Input.GetAxis("Horizontal");
+        verticalAxis = Input.GetAxis("Vertical");
+        horizentalAxis = Input.GetAxis("Horizontal");
 
-        float speedX = inputX * speed;
-        float speedZ = inputZ * speed;
-
-        Vector3 velocity = new Vector3(speedX, 0f, speedZ);
-
-        playerRigidbody.velocity = velocity;
+     
 
     }
 
@@ -44,11 +39,19 @@ public class PlayerController : MonoBehaviour
         gameManager.EndGame();
     }
 
-
-
-    public float speed;
-    private Rigidbody playerRigidbody;
-
     private GameManager gameManager;
+
+    private float verticalAxis;
+    private float horizentalAxis;
+
+    public float VerticalAxis
+    {
+        get { return verticalAxis; }
+    }
+
+    public float HorizentalAxis
+    {
+        get { return horizentalAxis; }
+    }
 
 }

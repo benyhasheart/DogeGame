@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
@@ -30,7 +29,6 @@ MonoBehaviour:
   m_Name: MKGlow
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   showEditorMainBehavior:
     m_OverrideState: 0
     m_Value: 1
@@ -78,18 +76,12 @@ MonoBehaviour:
   anamorphicRatio:
     m_OverrideState: 0
     m_Value: 0
-    min: -1
-    max: 1
   lumaScale:
     m_OverrideState: 0
     m_Value: 0.5
-    min: 0
-    max: 1
   blooming:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 1
   bloomThreshold:
     m_OverrideState: 1
     m_Value:
@@ -98,8 +90,6 @@ MonoBehaviour:
   bloomScattering:
     m_OverrideState: 1
     m_Value: 8.5
-    min: 1
-    max: 10
   bloomIntensity:
     m_OverrideState: 1
     m_Value: 3
@@ -127,8 +117,6 @@ MonoBehaviour:
   lensFlareGhostFade:
     m_OverrideState: 0
     m_Value: 10
-    min: 0
-    max: 25
   lensFlareGhostIntensity:
     m_OverrideState: 1
     m_Value: 1
@@ -140,55 +128,39 @@ MonoBehaviour:
   lensFlareScattering:
     m_OverrideState: 0
     m_Value: 5
-    min: 0
-    max: 8
   lensFlareColorRamp:
     m_OverrideState: 0
     m_Value: {fileID: 0}
   lensFlareChromaticAberration:
     m_OverrideState: 0
     m_Value: 53
-    min: -100
-    max: 100
   lensFlareGhostCount:
     m_OverrideState: 0
     m_Value: 3
-    min: 0
-    max: 5
   lensFlareGhostDispersal:
     m_OverrideState: 0
     m_Value: 0.6
-    min: -1
-    max: 1
   lensFlareHaloFade:
     m_OverrideState: 0
     m_Value: 2
-    min: 0
-    max: 25
   lensFlareHaloIntensity:
     m_OverrideState: 1
     m_Value: 0.5
   lensFlareHaloSize:
     m_OverrideState: 0
     m_Value: 0.4
-    min: 0
-    max: 1
   allowGlare:
     m_OverrideState: 1
     m_Value: 0
   glareBlend:
     m_OverrideState: 0
     m_Value: 0.33
-    min: 0
-    max: 1
   glareIntensity:
     m_OverrideState: 0
     m_Value: 1
   glareAngle:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 360
   glareThreshold:
     m_OverrideState: 0
     m_Value:
@@ -197,88 +169,60 @@ MonoBehaviour:
   glareStreaks:
     m_OverrideState: 0
     m_Value: 4
-    min: 1
-    max: 4
   glareScattering:
     m_OverrideState: 1
     m_Value: 2.15
-    min: 0
-    max: 4
   glareStyle:
     m_OverrideState: 0
     m_Value: 4
   glareSample0Scattering:
     m_OverrideState: 0
     m_Value: 5
-    min: 0
-    max: 10
   glareSample0Angle:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 360
   glareSample0Intensity:
     m_OverrideState: 1
     m_Value: 1
   glareSample0Offset:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 10
   glareSample1Scattering:
     m_OverrideState: 0
     m_Value: 5
-    min: 0
-    max: 10
   glareSample1Angle:
     m_OverrideState: 0
     m_Value: 45
-    min: 0
-    max: 360
   glareSample1Intensity:
     m_OverrideState: 1
     m_Value: 1
   glareSample1Offset:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 10
   glareSample2Scattering:
     m_OverrideState: 0
     m_Value: 5
-    min: 0
-    max: 10
   glareSample2Angle:
     m_OverrideState: 0
     m_Value: 90
-    min: 0
-    max: 360
   glareSample2Intensity:
     m_OverrideState: 1
     m_Value: 1
   glareSample2Offset:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 10
   glareSample3Scattering:
     m_OverrideState: 0
     m_Value: 5
-    min: 0
-    max: 10
   glareSample3Angle:
     m_OverrideState: 0
     m_Value: 135
-    min: 0
-    max: 360
   glareSample3Intensity:
     m_OverrideState: 1
     m_Value: 1
   glareSample3Offset:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 10
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
