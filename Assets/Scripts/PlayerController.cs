@@ -9,19 +9,20 @@ public class PlayerController : MonoBehaviour
     {
        
         gameManager = FindObjectOfType<GameManager>();
-
+        joystick = FindObjectOfType<VariableJoystick>();
         verticalAxis = 0.0f;
         horizentalAxis = 0.0f;
     }
-
-    // Update is called once per frame
     void Update()
     {
         verticalAxis = Input.GetAxis("Vertical");
         horizentalAxis = Input.GetAxis("Horizontal");
 
-     
-
+        if (joystick)
+        {
+            direction = Vector3.forward * joystick.Vertical + Vector3.right * joystick.Horizontal;
+            //Debug.Log(direction);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,9 +41,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private GameManager gameManager;
+    private VariableJoystick joystick;
 
     private float verticalAxis;
     private float horizentalAxis;
+    private Vector3 direction;
 
     public float VerticalAxis
     {
@@ -52,6 +55,11 @@ public class PlayerController : MonoBehaviour
     public float HorizentalAxis
     {
         get { return horizentalAxis; }
+    }
+
+    public Vector3 Direction
+    {
+        get { return direction; }
     }
 
 }
