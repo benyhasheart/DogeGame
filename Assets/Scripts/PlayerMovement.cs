@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = new Vector3(speedX, 0f, speedZ);
 
         playerRigidbody.velocity = velocity;
-        Vector3 force = controller.Direction * speed * Time.deltaTime;
+        //Vector3 force = controller.Direction * speed * Time.deltaTime;
         //eplayerRigidbody.AddForce(force, ForceMode.VelocityChange);
-        playerRigidbody.velocity = force;
-        Debug.Log(force);
+       // playerRigidbody.velocity = force;
+        //Debug.Log(force);
     }
     
 

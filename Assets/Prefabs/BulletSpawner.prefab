@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4700865925529250234}
   - component: {fileID: 4700865925529250235}
   - component: {fileID: 4700865925529250183}
+  - component: {fileID: -5190574442274341257}
   m_Layer: 0
   m_Name: BulletSpawner
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4700865925529250232}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 5ed3359e943040c49b3b348bc97f26cb, type: 3}
 --- !u!23 &4700865925529250234
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111,8 +112,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d900dca16255e36449b8f2df9d75b177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3097312676217205634, guid: af67705ed6ee0df499c6446be1e22e00,
-    type: 3}
+  bulletPrefab: {fileID: 455704657, guid: af67705ed6ee0df499c6446be1e22e00, type: 3}
   SpawnedBulletCounts: 0
   spawnRateMin: 0.1
   spawnRateMax: 3
+--- !u!114 &-5190574442274341257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4700865925529250232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ab6af5504253346917389dde252b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 20

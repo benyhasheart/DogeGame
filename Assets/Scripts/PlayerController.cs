@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        verticalAxis = Input.GetAxis("Vertical");
-        horizentalAxis = Input.GetAxis("Horizontal");
+        //verticalAxis = Input.GetAxis("Vertical");
+        //horizentalAxis = Input.GetAxis("Horizontal");
 
         if (joystick)
         {
             direction = Vector3.forward * joystick.Vertical + Vector3.right * joystick.Horizontal;
+            verticalAxis = joystick.Vertical;
+            horizentalAxis = joystick.Horizontal;
             //Debug.Log(direction);
         }
     }
