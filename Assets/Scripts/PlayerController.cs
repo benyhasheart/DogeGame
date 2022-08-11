@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
        
-        gameManager = FindObjectOfType<GameManager>();
+        
         joystick = FindObjectOfType<VariableJoystick>();
         verticalAxis = 0.0f;
         horizentalAxis = 0.0f;
@@ -27,22 +27,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Bullet")
-        {
-            Die();
-        }
-    }
 
-    private void Die()
-    {
-        gameObject.SetActive(false);
 
-        gameManager.EndGame();
-    }
-
-    private GameManager gameManager;
     private VariableJoystick joystick;
 
     private float verticalAxis;

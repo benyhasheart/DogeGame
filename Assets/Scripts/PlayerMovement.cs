@@ -9,13 +9,14 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidbody = GetComponent<Rigidbody>();
         controller = GetComponent<PlayerController>();
+        playerData = GetComponent<PlayerCharacter>().PlayerData;
     }
 
     //Update is called once per frame
     void Update()
     {
-        float speedX = controller.HorizentalAxis * speed;
-        float speedZ = controller.VerticalAxis * speed;
+        float speedX = controller.HorizentalAxis * playerData.currentSpeed;
+        float speedZ = controller.VerticalAxis * playerData.currentSpeed;
 
         Vector3 velocity = new Vector3(speedX, 0f, speedZ);
 
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     public float speed;
+    private PlayerData playerData;
     private Rigidbody playerRigidbody;
     private PlayerController controller;
 }

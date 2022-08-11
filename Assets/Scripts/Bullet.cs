@@ -16,7 +16,8 @@ public class Bullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Destroy(gameObject);
+            IDamageable damageable = other.GetComponent<IDamageable>();
+            damageable.OnDamage(1, new Vector3(0, 0, 0), new Vector3(0, 0, 0));
             return;
         }
 
