@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Scriptable/Player/PlayerData", fileName = "PlayerData", order = 0)]
+[CreateAssetMenu(menuName ="Scriptable/PlayerData", fileName = "PlayerData", order = 0)]
 public class PlayerData : ScriptableObject
 {
     public string characterName;

@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
-        bulletRigidbody.velocity = transform.forward * speed;
+        bulletRigidbody.velocity = transform.forward * bulletData.currentSpeed;
 
     }
 
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Player")
         {
             IDamageable damageable = other.GetComponent<IDamageable>();
-            damageable.OnDamage(1, new Vector3(0, 0, 0), new Vector3(0, 0, 0));
+            damageable.OnDamage(bulletData.damage, new Vector3(0, 0, 0), new Vector3(0, 0, 0));
             return;
         }
 
@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
             Vector3 target = transform.forward;
             target.z = -target.z;
             transform.forward = target;
-            bulletRigidbody.velocity = transform.forward * speed;
+            bulletRigidbody.velocity = transform.forward * bulletData.currentSpeed;
             return;
         }
 
@@ -35,13 +35,15 @@ public class Bullet : MonoBehaviour
             Vector3 target = transform.forward;
             target.x = -target.x;
             transform.forward = target;
-            bulletRigidbody.velocity = transform.forward * speed;
+            bulletRigidbody.velocity = transform.forward * bulletData.currentSpeed;
             return;
         }        
     }
 
     public float speed;
 
+    [SerializeField]
+    private BulletData bulletData;
     private Rigidbody bulletRigidbody;
     private BulletSpawner ownner;
 

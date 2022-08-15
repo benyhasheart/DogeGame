@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    private readonly float timeOffset = 1.0f;
+    private readonly float timeOffset = 5.0f;
     //ui text
     public GameObject gameoverText;
     public TextMeshProUGUI timeText;
