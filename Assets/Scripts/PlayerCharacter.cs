@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,9 @@ public class PlayerCharacter : MonoBehaviour, IDamageable
     {
         gameObject.SetActive(false);
 
-        gameManager.EndGame();
+        //gameManager.EndGame();
+
+        onDeath();
     }
 
     public void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
@@ -26,9 +29,11 @@ public class PlayerCharacter : MonoBehaviour, IDamageable
     {
         get { return playerData; }
     }
+    public Action onDeath;
 
     [SerializeField]
     private PlayerData playerData;
     private GameManager gameManager;
+
 
 }

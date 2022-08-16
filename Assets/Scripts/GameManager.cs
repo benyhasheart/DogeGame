@@ -18,7 +18,14 @@ public class GameManager : MonoBehaviour
     {
         isGameover = false;
         surviveTime = 0.0f;
-        spawnTime = timeOffset;               
+        spawnTime = timeOffset;
+        // 플레이어 델리게이트 등록
+        player = FindObjectOfType<PlayerCharacter>();
+
+        if ( !ReferenceEquals(player, null))
+        {
+            player.onDeath += EndGame;
+        }
     }
 
     // Update is called once per frame
@@ -27,19 +34,11 @@ public class GameManager : MonoBehaviour
         if ( !isGameover)
         {
             surviveTime += Time.deltaTime;
+            UIManager.UIManagerInstance.SetTimeTextValue(surviveTime);
+            UIManager.UIManagerInstance.SetBulletCountTextValue(bulletCount);
+        }        
 
-            timeText.text = "Time : " + (int)surviveTime;
-            bulletCountText.text = "Bullet : " + bulletCount;
-        }
-        else
-        {
-            if ( Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene("GameScene");
-            }
-        }
-
-        //move to eventManater                
+        //move to eventManager                
 
         if ( surviveTime > spawnTime)
         {
@@ -54,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         isGameover = true;
-        gameoverText.SetActive(true);
+        PauseGame(true);
 
         float bestTime = PlayerPrefs.GetFloat("BestTime");
 
@@ -64,8 +63,28 @@ public class GameManager : MonoBehaviour
 
             PlayerPrefs.SetFloat("BestTime", bestTime);
         }
+        UIManager.UIManagerInstance.SetRecoredTimeValue(bestTime);
+        //ui manager setup GameOverUI
+        UIManager.UIManagerInstance.GameOverHUD.SetActive(true);
+    }
 
-        recordText.text = "Best Time : " + (int)bestTime;
+    public void RestartGame()
+    {
+        PauseGame(false);
+        SceneManager.LoadScene("GameScene");      
+    }
+
+    public void PauseGame(bool active)
+    {
+        if ( active)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+
     }
 
     public void addBulletCount(int value = 1)
@@ -78,17 +97,18 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    private readonly float timeOffset = 5.0f;
     //ui text
-    public GameObject gameoverText;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI recordText;
     public TextMeshProUGUI bulletCountText;
+
 
     //spawner
     public List<BulletSpawner> spawnerList;
 
     private static GameManager instance;
+    private PlayerCharacter player;
+    private readonly float timeOffset = 5.0f;
     private int bulletCount;
 
     private float surviveTime;
