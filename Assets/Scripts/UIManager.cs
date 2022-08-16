@@ -13,29 +13,39 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Clear();
     }
 
-    // Update is called once per frame
+    public void GameOver()
+    {
+        gameOverHUD.SetActive(true);
+        gameHUD.SetActive(false);
+    }
+
+    public void Clear()
+    {
+        gameOverHUD.SetActive(false);
+        gameHUD.SetActive(true);
+    }
 
     public void SetTimeTextValue(float time)
     {
-        timeText.text = ((int)time).ToString();
+        timeText.text = "Time : " + ((int)time).ToString();
     }
 
     public void SetResultTimeTextValue(float time)
     {
-        resultTime.text = time.ToString();
+        resultTime.text = "Time : " + ((int)time).ToString();
     }
 
     public void SetBulletCountTextValue(int counts)
     {
-        bulletCountText.text = counts.ToString();
+        bulletCountText.text = "Bullet : " + counts.ToString();
     }
 
     public void SetRecoredTimeValue(float time)
     {
-        recordText.text = ((int)time).ToString();
+        recordText.text = "Best Record : " + ((int)time).ToString();
     }
 
     public static UIManager UIManagerInstance
@@ -51,6 +61,8 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     [SerializeField]
     private GameObject gameOverHUD;
+    [SerializeField]
+    private GameObject gameHUD;
     [SerializeField]
     private TextMeshProUGUI timeText;
     [SerializeField]

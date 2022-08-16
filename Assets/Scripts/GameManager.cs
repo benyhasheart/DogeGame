@@ -64,13 +64,15 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetFloat("BestTime", bestTime);
         }
         UIManager.UIManagerInstance.SetRecoredTimeValue(bestTime);
+        UIManager.UIManagerInstance.SetResultTimeTextValue(surviveTime);
         //ui manager setup GameOverUI
-        UIManager.UIManagerInstance.GameOverHUD.SetActive(true);
+        UIManager.UIManagerInstance.GameOver();
     }
 
     public void RestartGame()
     {
         PauseGame(false);
+        UIManager.UIManagerInstance.Clear();
         SceneManager.LoadScene("GameScene");      
     }
 
