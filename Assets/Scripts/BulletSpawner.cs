@@ -39,10 +39,8 @@ public class BulletSpawner : MonoBehaviour
     public void SpawnBullet()
     {
 
-        Bullet bullet =
-           Instantiate<Bullet>(bulletPrefab, transform.position, transform.rotation);
-
-        bullet.Ownner = this;
+        Projectile bullet =
+           Instantiate(bulletPrefab, transform.position, transform.rotation);
 
         Vector3 forward;
         forward = bullet.transform.forward;
@@ -64,7 +62,7 @@ public class BulletSpawner : MonoBehaviour
     }
 
     
-    public Bullet bulletPrefab;
+    public Projectile bulletPrefab;
     public int SpawnedBulletCounts;
     Transform target;
 
