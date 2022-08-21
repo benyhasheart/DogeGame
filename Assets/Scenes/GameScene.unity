@@ -451,10 +451,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
+      propertyPath: spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: -5767299733318240923, guid: a1ba61c4551a31549bca9134aa2a5424,
+      objectReference: {fileID: -5767299733318240923, guid: af67705ed6ee0df499c6446be1e22e00,
         type: 3}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
@@ -1002,8 +1012,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
-      propertyPath: joystickType
+      propertyPath: snapX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: snapY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: handleRange
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: joystickType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -1184,10 +1209,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
+      propertyPath: spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: -5767299733318240923, guid: a1ba61c4551a31549bca9134aa2a5424,
+      objectReference: {fileID: -5767299733318240923, guid: af67705ed6ee0df499c6446be1e22e00,
         type: 3}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
@@ -1474,10 +1509,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
+      propertyPath: spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: -5767299733318240923, guid: a1ba61c4551a31549bca9134aa2a5424,
+      objectReference: {fileID: -5767299733318240923, guid: af67705ed6ee0df499c6446be1e22e00,
         type: 3}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
@@ -1586,7 +1631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027734142}
-  m_LocalRotation: {x: 0.52573115, y: 0.0000000165192, z: -0.000000010209427, w: 0.85065085}
+  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
   m_LocalPosition: {x: 0, y: 19.708, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2364,7 +2409,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618121669}
-  m_LocalRotation: {x: 0.52573115, y: 0.0000000165192, z: -0.000000010209427, w: 0.85065085}
+  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
   m_LocalPosition: {x: 0, y: 19.708, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2372,7 +2417,7 @@ Transform:
   - {fileID: 2069404203}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!1 &1665437040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,10 +2730,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
+      propertyPath: spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: -5767299733318240923, guid: a1ba61c4551a31549bca9134aa2a5424,
+      objectReference: {fileID: -5767299733318240923, guid: af67705ed6ee0df499c6446be1e22e00,
         type: 3}
+    - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
@@ -2888,6 +2943,10 @@ MonoBehaviour:
   - {fileID: 1760972714}
   - {fileID: 1013405160}
   - {fileID: 299311126}
+  spawnDataList:
+  - {fileID: 11400000, guid: f816c692d3f8fc54baeff04d05f4e6dc, type: 2}
+  - {fileID: 11400000, guid: ba1ed20553eb05e479bb183662089042, type: 2}
+  nextLevelTime: 30
 --- !u!4 &1881056115
 Transform:
   m_ObjectHideFlags: 0

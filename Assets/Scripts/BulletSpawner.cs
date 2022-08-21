@@ -9,38 +9,34 @@ public class BulletSpawner : MonoBehaviour
     {
         target = FindObjectOfType<PlayerController>().transform;
 
-        spawnRate = Random.Range(spawnRateMin, spawnRateMax);
-
         for (int i = 0; i < SpawnedBulletCounts; i++)
         {
             SpawnBullet();          
         }
+
+        GameManager.GameManagerInstance.onNextLevel += GetSpawnData;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+      
 
-        //timeAfterSpawn += Time.deltaTime;
-
-        //if ( timeAfterSpawn >= spawnRate)
-        //{
-        //    GameObject bullet = 
-        //    Instantiate(bulletPrefab, transform.position,transform.rotation);
-
-        //    bullet.transform.LookAt(target);
-
-        //    timeAfterSpawn = 0.0f;
-        //    spawnRate = Random.Range(spawnRateMin, spawnRateMax);
-        //}
+        if (timeAfterSpawn > spawnRate)
+        {
+            SpawnBullet();
+            timeAfterSpawn = 0.0f;
+        }
+        timeAfterSpawn += Time.deltaTime;
     }
-
-    
     public void SpawnBullet()
     {
+        if (ReferenceEquals(null, projectilePrefab))
+        {
+            return;
+        }
 
         Projectile bullet =
-           Instantiate(bulletPrefab, transform.position, transform.rotation);
+           Instantiate(projectilePrefab, transform.position, transform.rotation);
 
         Vector3 forward;
         forward = bullet.transform.forward;
@@ -49,6 +45,27 @@ public class BulletSpawner : MonoBehaviour
 
         GameManager.GameManagerInstance.addBulletCount();
     }
+
+    public void SetProjectileDataFromSpawnData(SpawnProjectileData spawnData)
+    {
+        projectilePrefab = spawnData.prefab;
+        spawnRate = spawnData.spawnTime;
+    }
+
+    private void GetSpawnData()
+    {
+        int level = GameManager.GameManagerInstance.GameLevel;
+
+        int size = GameManager.GameManagerInstance.spawnDataList.Count;
+
+        if (level < size )
+        {
+            spawnData = GameManager.GameManagerInstance.spawnDataList[level];
+            SetProjectileDataFromSpawnData(spawnData);
+        }
+    }
+
+
 
 
     public Vector3 GetRePosition()
@@ -61,13 +78,19 @@ public class BulletSpawner : MonoBehaviour
         get { return target; }
     }
 
-    
-    public Projectile bulletPrefab;
-    public int SpawnedBulletCounts;
-    Transform target;
+    public Projectile ProjectilePrefab
+    {
+        set { projectilePrefab = value; }
+        get { return projectilePrefab; }
+    }
 
-    public float spawnRateMin;
-    public float spawnRateMax;
+    public int SpawnedBulletCounts;
+    private Transform target;
+    [SerializeField]
+    private Projectile projectilePrefab;
+    private SpawnProjectileData spawnData;
+
+    [SerializeField]
     private float spawnRate;
     private float timeAfterSpawn;
 

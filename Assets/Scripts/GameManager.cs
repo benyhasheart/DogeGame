@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,13 +13,13 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         bulletCount = 0;
+        gameLevel = 0;
     }
     // Start is called before the first frame update
     void Start()
     {
         isGameover = false;
         surviveTime = 0.0f;
-        spawnTime = timeOffset;
         // 플레이어 델리게이트 등록
         player = FindObjectOfType<PlayerCharacter>();
 
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
         {
             player.onDeath += EndGame;
         }
+        //nextlevel Check
+        StartCoroutine(NextLevelCoroutine());
     }
 
     // Update is called once per frame
@@ -40,16 +43,21 @@ public class GameManager : MonoBehaviour
 
         //move to eventManager                
 
-        if ( surviveTime > spawnTime)
-        {
-            foreach( BulletSpawner spawner in spawnerList)
-            {
-                spawner.SpawnBullet();                
-            }            
-            spawnTime += timeOffset;
-        }
     }
 
+    IEnumerator NextLevelCoroutine()
+    {
+        WaitForSeconds waitTime = new WaitForSeconds(nextLevelTime);
+
+        while(true)
+        {
+            onNextLevel();
+            gameLevel += 1;
+
+            yield return waitTime;
+        }
+
+    }
     public void EndGame()
     {
         isGameover = true;
@@ -99,6 +107,11 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
+    public int GameLevel
+    {
+        get { return gameLevel; }
+    }
+
     //ui text
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI recordText;
@@ -107,13 +120,21 @@ public class GameManager : MonoBehaviour
 
     //spawner
     public List<BulletSpawner> spawnerList;
+    //spawnData
+
+    public List<SpawnProjectileData> spawnDataList;
+    //delegate
+    public Action onNextLevel;
+
+    public float nextLevelTime;
+
+    private int gameLevel;
 
     private static GameManager instance;
     private PlayerCharacter player;
-    private readonly float timeOffset = 5.0f;
-    private int bulletCount;
 
+    private int bulletCount;
     private float surviveTime;
-    private float spawnTime;
+    
     private bool isGameover;
 }
