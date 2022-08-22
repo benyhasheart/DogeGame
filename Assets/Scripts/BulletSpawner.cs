@@ -38,10 +38,8 @@ public class BulletSpawner : MonoBehaviour
         Projectile bullet =
            Instantiate(projectilePrefab, transform.position, transform.rotation);
 
-        Vector3 forward;
-        forward = bullet.transform.forward;
-        forward.x = Random.Range(-1.0f, 1.0f);
-        bullet.transform.forward = forward;
+        bullet.SetTarget(target);
+        bullet.Fire();
 
         GameManager.GameManagerInstance.addBulletCount();
     }
