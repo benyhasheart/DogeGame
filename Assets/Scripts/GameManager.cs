@@ -112,6 +112,11 @@ public class GameManager : MonoBehaviour
         get { return gameLevel; }
     }
 
+    public PlayerCharacter Player
+    {
+        get { return player; }
+    }
+
     //ui text
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI recordText;

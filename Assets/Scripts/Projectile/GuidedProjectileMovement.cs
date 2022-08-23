@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultProjectileMovement : ProjectileMovement
+public class GuidedProjectileMovement : DefaultProjectileMovement
 {
     // Start is called before the first frame update
     void Start()
@@ -10,8 +10,21 @@ public class DefaultProjectileMovement : ProjectileMovement
         projectileRigidbody = GetComponent<Rigidbody>();
         profileData = GetComponent<Projectile>().profileData;
         projectileRigidbody.velocity = transform.forward * profileData.currentSpeed;
+        //delegate
+        detect.onDetect += MoveToTarget;
     }
 
+    private void MoveToTarget()
+    {
+        if (detect.HasTarget)
+        {
+            if ( !ReferenceEquals(null, projectileRigidbody))
+            {
+                transform.LookAt(detect.TargetTransform);
+                projectileRigidbody.velocity = transform.forward * profileData.currentSpeed;
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -24,4 +37,6 @@ public class DefaultProjectileMovement : ProjectileMovement
         Bounds(other);
     }
 
+    [SerializeField]
+    private DetectTarget detect;
 }

@@ -10,6 +10,7 @@ public class ProjectileData : ScriptableObject
     public float currentSpeed;
     public float maxSpeed;
     public float minSpeed;
+    public float intensity;
 
     public AudioClip dieClip;
     public AudioClip hitClip;

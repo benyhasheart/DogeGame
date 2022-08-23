@@ -22,5 +22,5 @@ public class Projectile : MonoBehaviour, IFireable
 
 
     public ProjectileData profileData;
-    public Transform targetTransform;
+    private Transform targetTransform;
 }

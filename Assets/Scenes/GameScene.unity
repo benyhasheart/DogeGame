@@ -288,7 +288,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &283035919
 GameObject:
@@ -464,11 +464,12 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8131665085541678246, guid: bf84bc88886d98741a21036f2b25f1b8,
+        type: 3}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250232, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
@@ -803,7 +804,7 @@ RectTransform:
   - {fileID: 1903344631}
   - {fileID: 1112964086}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1222,11 +1223,12 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8131665085541678246, guid: bf84bc88886d98741a21036f2b25f1b8,
+        type: 3}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250232, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
@@ -1527,11 +1529,12 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8131665085541678246, guid: bf84bc88886d98741a21036f2b25f1b8,
+        type: 3}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250232, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
@@ -1642,7 +1645,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
 --- !u!114 &1027734146
 MonoBehaviour:
@@ -2317,7 +2320,7 @@ Transform:
   - {fileID: 508629174}
   - {fileID: 1852365494}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472961894
 GameObject:
@@ -2421,7 +2424,7 @@ Transform:
   m_Children:
   - {fileID: 2069404203}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!1 &1665437040
 GameObject:
@@ -2748,11 +2751,12 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8131665085541678246, guid: bf84bc88886d98741a21036f2b25f1b8,
+        type: 3}
     - target: {fileID: 4700865925529250183, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
       propertyPath: SpawnedBulletCounts
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4700865925529250232, guid: 35a90bd05498354439820375c598a60c,
         type: 3}
@@ -2951,6 +2955,7 @@ MonoBehaviour:
   spawnDataList:
   - {fileID: 11400000, guid: f816c692d3f8fc54baeff04d05f4e6dc, type: 2}
   - {fileID: 11400000, guid: 95c8d8ceebc6e874095bb0fb94f02047, type: 2}
+  - {fileID: 11400000, guid: 9dffd3aaa74e1e9408ccfd78e8e80b4a, type: 2}
   - {fileID: 11400000, guid: ba1ed20553eb05e479bb183662089042, type: 2}
   nextLevelTime: 30
 --- !u!4 &1881056115
@@ -3387,7 +3392,7 @@ PrefabInstance:
     - target: {fileID: 7306320928683965564, guid: d7954500333702f4489b86b0fed8cb3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7306320928683965564, guid: d7954500333702f4489b86b0fed8cb3d,
         type: 3}
