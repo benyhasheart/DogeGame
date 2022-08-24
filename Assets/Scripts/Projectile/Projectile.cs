@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour, IFireable
         
     }
 
-    public void Fire()
+    virtual public void Fire()
     {
         transform.LookAt(targetTransform);
     }
@@ -22,5 +22,5 @@ public class Projectile : MonoBehaviour, IFireable
 
 
     public ProjectileData profileData;
-    private Transform targetTransform;
+    protected Transform targetTransform;
 }

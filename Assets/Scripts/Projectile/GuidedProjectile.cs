@@ -6,10 +6,4 @@ public class GuidedProjectile : Projectile
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
