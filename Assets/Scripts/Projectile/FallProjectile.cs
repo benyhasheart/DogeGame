@@ -18,6 +18,7 @@ public class FallProjectile : Projectile
         position.y = startHeight;
 
         transform.position = position;
+        
 
     }
 

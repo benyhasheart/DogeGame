@@ -48,6 +48,11 @@ public class UIManager : MonoBehaviour
         recordText.text = "Best Record : " + ((int)time).ToString();
     }
 
+    public void SetLevelValue(int level)
+    {
+        levelText.text = "Level : " + level.ToString();
+    }
+
     public static UIManager UIManagerInstance
     {
         get { return instance; }
@@ -71,5 +76,7 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI recordText;
     [SerializeField]
     private TextMeshProUGUI resultTime;
+    [SerializeField]
+    private TextMeshProUGUI levelText;
 
 }
